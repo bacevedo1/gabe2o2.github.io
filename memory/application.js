@@ -23,25 +23,25 @@ function shuffle(array) {
   for(i in card_array){
     $('#card_holder').append('<div class="card"><p>'+card_array[i]+'</p></div>');
   }
-  var card_1 = 0;
-  var card_2 = 1;
-  var click_count = "first";
+  var card_1=0;
+  var card_2=2;
+  var click_count = 'first';
   $(".card").click(function(){
-    if(click_count == "first"){
-    $(this).find("p").css("opacity", 1).addClass('clicked');
-    card_1 = $(this).find("p").html();
-    click_count = "second";
+    if(click_count == 'first'){
+    	$(this).find("p").css("opacity", 1).addClass('clicked');
+    	card_1 = $(this).find("p").html();
+      click_count="second";
     }
     else{
-      $(this).find("p").css("opacity", 1).addClass('clicked');
-      card_2 = $(this).find("p").html();
-      if(card_1 == card_2){
-        $(".clicked").css("color", "green").removeclass("clicked");
-        // If they are the same, then they turn bold and stay on the screen
+      $(this).find("p").css("opacity", 1).addClass("clicked");
+    	card_2 = $(this).find("p").html();
+      click_count="first";
+      if(card_1==card_2){
+        $('.clicked').css("color","blue").removeClass('clicked');
       }
       else{
-        $(".clicked").css("opacity", 0);
-        //Else, the inccorect matching goes away. If a pair has been made, make sure that those are not also erased. The If-Else is our next step
+        setTimeout(function(){ $('.clicked').css("opacity",0).removeClass('clicked');}, 1000);
+        
       }
     }
   })
