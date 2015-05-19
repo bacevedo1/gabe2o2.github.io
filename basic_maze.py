@@ -15,13 +15,13 @@ def move_forward(feet): #make a function that takes in a number of feet and move
     fwd(14)
     time.sleep(.3)
 
-def move_left(feet)
+def move_left(feet):
     enc_tgt(1,0,14)
     time.sleep(.1)
     fwd(14)
     time.sleep(.3)
 
-def move_right(feet)
+def move_right(feet):
     enc_tgt(0,1,14)
     time.sleep(.1)
     fwd(14)
